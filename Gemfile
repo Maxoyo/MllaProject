@@ -9,6 +9,10 @@ gem 'sqlite3'
 # Use MongoDB as the database
 gem 'mongoid', :github=>"mongoid/mongoid"
 
+# Acces Google Drive API
+gem 'google_drive'
+gem 'oauth2'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
