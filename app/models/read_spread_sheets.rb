@@ -19,12 +19,20 @@ class ReadSpreadSheets
     l2 = p ws[2, 2]
     l3 = p ws[2, 3]
 
-  # Create a contact
+    array = Array.new(3)
+    array[0] = l1
+    array[1] = l2
+    array[2] = l3
+    return array
+  end
+
+  def self.putContact(r1,r2,r3)
+    # Create a contact
     user = Contact.new
-    user.first_name = l1
-    user.last_name = l2
-    user.age = l3
-  # Save a contact
+    user.first_name = r1
+    user.last_name = r2
+    user.age = r3
+    # Save a contact in MongoDB
     user.save!
   end
   p "end"
