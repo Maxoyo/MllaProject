@@ -19,10 +19,13 @@ class ReadSpreadSheets
     l2 = p ws[2, 2]
     l3 = p ws[2, 3]
 
+  # Put this content in an array
     array = Array.new(3)
     array[0] = l1
     array[1] = l2
     array[2] = l3
+
+  # Function return the array
     return array
   end
 
@@ -35,5 +38,6 @@ class ReadSpreadSheets
     # Save a contact in MongoDB
     user.save!
   end
+
   p "end"
 end

@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'rails/mongoid'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -8,6 +9,14 @@ Bundler.require(*Rails.groups)
 
 module MllaProject
   class Application < Rails::Application
+
+    #Add a bunch of crap to solve Mongoid::Errors::NoClientConfig, doesn't work :/
+    Mongoid.load!(File.expand_path('mongoid.yml', './config'))
+    config.autoload_paths += %W(#{config.root}/lib)
+    config.generators do |g|
+      g.orm :mongoid
+    end
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
