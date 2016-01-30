@@ -7,7 +7,7 @@ gem 'rails', '4.1.8'
 gem 'sqlite3'
 
 # Use MongoDB as the database
-gem 'mongoid', :github=>"mongoid/mongoid"
+gem 'mongoid', '~> 5.1.0'
 
 # Acces Google Drive API
 gem 'google_drive'
